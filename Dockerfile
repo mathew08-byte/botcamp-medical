@@ -10,10 +10,9 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y --no-install-recommends build-essential curl git && rm -rf /var/lib/apt/lists/*
 
-COPY pyproject.toml poetry.lock* requirements.txt* /app/
+COPY requirements.txt /app/
 
-RUN if [ -f requirements.txt ]; then pip install --upgrade pip && pip install -r requirements.txt; fi \
- || (pip install --upgrade pip poetry && poetry install --no-root --only main)
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY . /app
 
