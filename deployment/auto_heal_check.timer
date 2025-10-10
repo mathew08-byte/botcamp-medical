@@ -1,0 +1,11 @@
+[Unit]
+Description=Run BotCamp Auto-Heal every minute
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=60s
+Unit=auto_heal_check.service
+
+[Install]
+WantedBy=timers.target
+

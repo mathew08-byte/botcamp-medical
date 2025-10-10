@@ -1,0 +1,112 @@
+{
+  "universities": [
+    {
+      "name": "University of Nairobi",
+      "courses": [
+        {
+          "name": "Bachelor of Medicine and Bachelor of Surgery (MBChB)",
+          "units": [
+            {
+              "name": "Anatomy",
+              "year": "1",
+              "topics": [
+                {
+                  "name": "General Anatomy",
+                  "questions": [
+                    {
+                      "question_text": "Which of the following is the largest bone in the human body?",
+                      "option_a": "Femur",
+                      "option_b": "Tibia",
+                      "option_c": "Humerus",
+                      "option_d": "Radius",
+                      "correct_answer": "A",
+                      "explanation": "The femur (thigh bone) is the longest and strongest bone in the human body.",
+                      "difficulty": "easy"
+                    },
+                    {
+                      "question_text": "The anatomical position is characterized by:",
+                      "option_a": "Palms facing backward",
+                      "option_b": "Palms facing forward",
+                      "option_c": "Arms at sides",
+                      "option_d": "Both B and C",
+                      "correct_answer": "D",
+                      "explanation": "In anatomical position, the body is upright with palms facing forward and arms at the sides.",
+                      "difficulty": "medium"
+                    }
+                  ]
+                },
+                {
+                  "name": "Cardiovascular System",
+                  "questions": [
+                    {
+                      "question_text": "Which chamber of the heart receives oxygenated blood from the lungs?",
+                      "option_a": "Right atrium",
+                      "option_b": "Left atrium",
+                      "option_c": "Right ventricle",
+                      "option_d": "Left ventricle",
+                      "correct_answer": "B",
+                      "explanation": "The left atrium receives oxygenated blood from the lungs via the pulmonary veins.",
+                      "difficulty": "medium"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Physiology",
+              "year": "1",
+              "topics": [
+                {
+                  "name": "Cardiovascular Physiology",
+                  "questions": [
+                    {
+                      "question_text": "What is the normal resting heart rate for adults?",
+                      "option_a": "40-60 bpm",
+                      "option_b": "60-100 bpm",
+                      "option_c": "100-120 bpm",
+                      "option_d": "120-140 bpm",
+                      "correct_answer": "B",
+                      "explanation": "Normal resting heart rate for adults is typically 60-100 beats per minute.",
+                      "difficulty": "easy"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kenyatta University",
+      "courses": [
+        {
+          "name": "Bachelor of Medicine and Bachelor of Surgery (MBChB)",
+          "units": [
+            {
+              "name": "Pathology",
+              "year": "2",
+              "topics": [
+                {
+                  "name": "General Pathology",
+                  "questions": [
+                    {
+                      "question_text": "What is the most common cause of acute myocardial infarction?",
+                      "option_a": "Coronary artery spasm",
+                      "option_b": "Atherosclerosis",
+                      "option_c": "Embolism",
+                      "option_d": "Vasculitis",
+                      "correct_answer": "B",
+                      "explanation": "Atherosclerosis with plaque rupture and thrombosis is the most common cause of acute myocardial infarction.",
+                      "difficulty": "hard"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

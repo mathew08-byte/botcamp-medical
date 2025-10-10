@@ -1,0 +1,13 @@
+[Unit]
+Description=BotCamp Auto-Heal Check
+After=network-online.target
+
+[Service]
+Type=oneshot
+Environment=HEALTH_URL=http://localhost:8000/ready
+WorkingDirectory=%h/botcamp-medical
+ExecStart=%h/botcamp-medical/deployment/auto_heal_check.sh
+
+[Install]
+WantedBy=multi-user.target
+

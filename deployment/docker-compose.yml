@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    env_file: ../.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+  worker:
+    image: ghcr.io/owner/repo:latest
+    command: python -m services.async_jobs
+    env_file: ../.env
+    depends_on:
+      - redis
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: botcamp
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+  adminer:
+    image: adminer
+    ports:
+      - "8080:8080"
+

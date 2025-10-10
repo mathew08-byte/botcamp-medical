@@ -1,0 +1,66 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    image: botcamp-medical:local
+    env_file: .env
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/vision.json
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+    restart: unless-stopped
+    volumes:
+      - ./visionapiproject-474510-e460df984248.json:/app/vision.json:ro
+
+  bot:
+    image: botcamp-medical:local
+    env_file: .env
+    command: ["python", "main.py"]
+    depends_on:
+      - db
+      - redis
+    restart: unless-stopped
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/vision.json
+    volumes:
+      - ./visionapiproject-474510-e460df984248.json:/app/vision.json:ro
+
+  worker:
+    image: botcamp-medical:local
+    env_file: .env
+    command: ["python", "worker.py"]
+    depends_on:
+      - db
+      - redis
+    restart: unless-stopped
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: botcamp
+      POSTGRES_PASSWORD: botcamp
+      POSTGRES_DB: botcamp
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  pgdata:
+
+

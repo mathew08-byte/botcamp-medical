@@ -1,0 +1,19 @@
+AIzaSyCwwue0kUF9E5mzXZ_lXZN241zFd3AIHhk
+
+Using It (Example for Python)
+
+Install the SDK:
+
+pip install google-generativeai
+
+
+Then use your key:
+
+import google.generativeai as genai
+
+genai.configure(api_key="YOUR_API_KEY")
+
+model = genai.GenerativeModel("gemini-1.5-pro")
+
+response = model.generate_content("Explain the structure of DNA")
+print(response.text)
