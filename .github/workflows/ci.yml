@@ -47,7 +47,7 @@ jobs:
       - name: Run tests (if any)
         run: |
           if compgen -G "tests/**/*.py" > /dev/null || [ -d tests ]; then \
-            pytest -q; \
+            pytest -q tests/; \
           else \
             echo "No tests directory; skipping"; \
           fi
