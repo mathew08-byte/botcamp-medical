@@ -1,4 +1,5 @@
 # syntax=docker/dockerfile:1
+# Updated to fix Poetry file references
 
 FROM python:3.11-slim AS builder
 
